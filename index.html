@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emface Treatment | Eternal Wellness Medical Spa</title>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Karla:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --brand-primary: #926D5C;
+  --taupe-medium: #D2C3B6;
+  --taupe-light: #E1D6CC;
+  --taupe-button: #E1D7CD;
+  --sand: #EDE9E4;
+  --warm-mist: #EDE9E5;
+  --charcoal: #464344;
+  --near-black: #101010;
+  --dark-gray: #444444;
+  --medium-gray: #707070;
+  --terracotta: #D97962;
+  --white: #FFFFFF;
+  --border-gray: #DADADA;
+  --font-heading: 'Marcellus', serif;
+  --font-body: 'Karla', sans-serif;
+  --font-secondary: 'Karla', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--dark-gray);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { text-decoration: none; color: inherit; }
+
+/* ── UTILITY ── */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 46px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--near-black);
+  text-transform: capitalize;
+}
+.section-title em {
+  font-style: italic;
+}
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2.16px;
+  text-transform: uppercase;
+  padding: 15px 36px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.4s, box-shadow 0.3s;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+.btn-taupe { background: var(--taupe-button); color: #000; }
+.btn-taupe:hover { background: var(--taupe-medium); }
+.btn-brown { background: var(--brand-primary); color: var(--white); }
+.btn-brown:hover { background: #7d5c4d; }
+.btn-white { background: var(--white); color: var(--near-black); }
+.btn-white:hover { background: var(--sand); }
+
+/* ── HEADER ── */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 18px 0;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.site-header.scrolled {
+  background: rgba(255,255,255,0.97);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.header-logo img { height: 40px; width: auto; }
+.header-nav { display: flex; align-items: center; gap: 32px; }
+.header-nav a {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--white);
+  transition: color 0.3s;
+}
+.site-header.scrolled .header-nav a { color: var(--near-black); }
+.site-header.scrolled .logo-white { display: none; }
+.site-header.scrolled .logo-black { display: block; }
+.logo-black { display: none; }
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('images/hero.jpg') center center / cover no-repeat;
+}
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+.hero-text {
+  max-width: 50%;
+  min-width: 340px;
+}
+.hero-eyebrow {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--taupe-medium);
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-family: var(--font-heading);
+  font-size: 68px;
+  font-weight: 400;
+  line-height: 1.05;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+.hero h1 em { font-style: italic; }
+.hero-sub {
+  font-family: var(--font-secondary);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 36px;
+}
+.hero .btn { margin-top: 4px; }
+
+/* ── FEATURES ── */
+.features {
+  padding: 100px 0;
+  background: var(--white);
+}
+.features-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 64px;
+}
+.features-intro .eyebrow { color: var(--brand-primary); }
+.features-intro p {
+  font-family: var(--font-secondary);
+  font-size: 16px;
+  color: var(--medium-gray);
+  margin-top: 20px;
+}
+.feature-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+.feature-row:last-child { margin-bottom: 0; }
+.feature-row.reverse .feature-image { order: 2; }
+.feature-row.reverse .feature-text { order: 1; }
+.feature-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: rgba(0,0,0,0.15) 0px 0px 20px 0px;
+  object-fit: cover;
+}
+.feature-image img.tall { max-height: 500px; }
+.feature-text h3 {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--near-black);
+  text-transform: capitalize;
+  margin-bottom: 16px;
+}
+.feature-text p {
+  font-family: var(--font-secondary);
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--dark-gray);
+}
+.feature-text .eyebrow { color: var(--brand-primary); margin-bottom: 8px; }
+.feature-stats {
+  display: flex;
+  gap: 32px;
+  margin-top: 28px;
+}
+.feature-stat {
+  text-align: center;
+}
+.feature-stat .number {
+  font-family: var(--font-heading);
+  font-size: 36px;
+  color: var(--brand-primary);
+  display: block;
+}
+.feature-stat .label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--medium-gray);
+}
+
+/* ── HOW IT WORKS ── */
+.how-it-works {
+  padding: 100px 0;
+  background: var(--sand);
+}
+.how-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.how-header .eyebrow { color: var(--brand-primary); }
+.how-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+.how-video {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: rgba(0,0,0,0.15) 0px 0px 20px 0px;
+}
+.how-video video {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+.how-steps { display: flex; flex-direction: column; gap: 36px; }
+.step {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+.step-number {
+  font-family: var(--font-heading);
+  font-size: 48px;
+  color: var(--taupe-medium);
+  line-height: 1;
+  min-width: 50px;
+}
+.step-content h4 {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--near-black);
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+}
+.step-content p {
+  font-family: var(--font-secondary);
+  font-size: 15px;
+  color: var(--dark-gray);
+  line-height: 1.7;
+}
+
+/* ── CTA BANNER ── */
+.cta-banner {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+.cta-banner-content {
+  padding-top: 50vh;
+}
+.cta-banner-bg {
+  position: absolute;
+  inset: 0;
+  background: url('images/banner2.jpg') center center / cover no-repeat;
+}
+.cta-banner-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+.cta-banner-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 24px 80px;
+}
+.cta-banner-content h2 {
+  font-family: var(--font-heading);
+  font-size: 46px;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.cta-banner-content h2 em { font-style: italic; }
+.cta-banner-content p {
+  font-family: var(--font-secondary);
+  font-size: 16px;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 32px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── IDEAL CANDIDATES / QUIZ ── */
+.quiz-section {
+  padding: 100px 0;
+  background: var(--white);
+}
+.quiz-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 48px;
+}
+.quiz-header .eyebrow { color: var(--brand-primary); }
+.quiz-header p {
+  font-family: var(--font-secondary);
+  font-size: 16px;
+  color: var(--medium-gray);
+  margin-top: 16px;
+}
+.quiz-card {
+  max-width: 680px;
+  margin: 0 auto;
+  background: var(--sand);
+  border-radius: 12px;
+  padding: 48px;
+  box-shadow: rgba(0,0,0,0.06) 0px 4px 24px;
+}
+.quiz-progress {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 36px;
+}
+.quiz-progress .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--taupe-medium);
+  transition: background 0.3s;
+}
+.quiz-progress .dot.active { background: var(--brand-primary); }
+.quiz-progress .dot.completed { background: var(--brand-primary); }
+.quiz-question {
+  display: none;
+}
+.quiz-question.active { display: block; }
+.quiz-question h4 {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  color: var(--near-black);
+  margin-bottom: 24px;
+  line-height: 1.3;
+}
+.quiz-options { display: flex; flex-direction: column; gap: 12px; }
+.quiz-option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 16px 20px;
+  background: var(--white);
+  border: 2px solid var(--border-gray);
+  border-radius: 10px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--dark-gray);
+  cursor: pointer;
+  transition: border-color 0.3s, background 0.3s;
+}
+.quiz-option:hover { border-color: var(--brand-primary); background: rgba(146,109,92,0.04); }
+.quiz-option.selected { border-color: var(--brand-primary); background: rgba(146,109,92,0.08); }
+.quiz-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 32px;
+}
+.quiz-nav .btn-back {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--medium-gray);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 0;
+}
+.quiz-nav .btn-back:hover { color: var(--near-black); }
+.quiz-result {
+  display: none;
+  text-align: center;
+}
+.quiz-result.active { display: block; }
+.quiz-result h4 {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  color: var(--near-black);
+  margin-bottom: 12px;
+}
+.quiz-result p {
+  font-family: var(--font-secondary);
+  font-size: 15px;
+  color: var(--dark-gray);
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+.quiz-result .match-badge {
+  display: inline-block;
+  background: var(--brand-primary);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+}
+
+/* ── BEFORE & AFTER ── */
+.before-after {
+  padding: 100px 0;
+  background: var(--sand);
+}
+.ba-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.ba-header .eyebrow { color: var(--brand-primary); }
+.ba-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.ba-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: rgba(0,0,0,0.12) 0px 0px 16px 0px;
+  background: var(--white);
+}
+.ba-card img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* ── BOOKING FORM ── */
+.booking {
+  padding: 100px 0;
+  background: var(--white);
+}
+.booking-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+.booking-info .eyebrow { color: var(--brand-primary); }
+.booking-info h2 {
+  font-family: var(--font-heading);
+  font-size: 46px;
+  color: var(--near-black);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+.booking-info h2 em { font-style: italic; }
+.booking-info p {
+  font-family: var(--font-secondary);
+  font-size: 15px;
+  color: var(--dark-gray);
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+.booking-detail {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.booking-detail svg {
+  flex-shrink: 0;
+  color: var(--brand-primary);
+}
+.booking-detail span {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--dark-gray);
+}
+.booking-form {
+  background: var(--sand);
+  border-radius: 12px;
+  padding: 44px;
+}
+.booking-form h3 {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  color: var(--near-black);
+  margin-bottom: 28px;
+  text-align: center;
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-group { margin-bottom: 16px; }
+.form-group label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--medium-gray);
+  margin-bottom: 6px;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border-gray);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--dark-gray);
+  background: var(--white);
+  transition: border-color 0.3s;
+  outline: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { border-color: var(--brand-primary); }
+.form-group textarea { resize: vertical; min-height: 100px; }
+.booking-form .btn { width: 100%; text-align: center; margin-top: 8px; }
+
+/* ── FAQ ── */
+.faq {
+  padding: 100px 0;
+  background: var(--warm-mist);
+}
+.faq-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.faq-header .eyebrow { color: var(--brand-primary); }
+.faq-list {
+  max-width: 780px;
+  margin: 0 auto;
+}
+.faq-item {
+  border-bottom: 1px solid var(--border-gray);
+}
+.faq-item:first-child { border-top: 1px solid var(--border-gray); }
+.faq-toggle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+.faq-toggle h4 {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--near-black);
+  flex: 1;
+  padding-right: 16px;
+}
+.faq-toggle .icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-primary);
+  transition: transform 0.3s;
+}
+.faq-item.open .faq-toggle .icon { transform: rotate(45deg); }
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+.faq-item.open .faq-answer { max-height: 300px; }
+.faq-answer p {
+  font-family: var(--font-secondary);
+  font-size: 15px;
+  color: var(--dark-gray);
+  line-height: 1.8;
+  padding-bottom: 22px;
+}
+
+/* ── FOOTER ── */
+.site-footer {
+  background: var(--charcoal);
+  padding: 64px 0 32px;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+.footer-brand img { height: 44px; margin-bottom: 16px; }
+.footer-brand p {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+  max-width: 280px;
+}
+.footer-col h5 {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 10px; }
+.footer-col a {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  transition: color 0.3s;
+}
+.footer-col a:hover { color: var(--white); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-bottom p {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+}
+.footer-social { display: flex; gap: 16px; }
+.footer-social a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.6);
+  transition: background 0.3s, color 0.3s;
+}
+.footer-social a:hover { background: var(--brand-primary); color: var(--white); }
+
+/* ── ANIMATIONS ── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0, 0.33, 0.07, 1.03), transform 0.8s cubic-bezier(0, 0.33, 0.07, 1.03);
+}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .hero h1 { font-size: 52px; }
+  .hero-text { max-width: 50%; }
+  .section-title { font-size: 38px; }
+  .feature-row { gap: 40px; }
+  .how-grid { gap: 40px; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .header-nav { display: none; }
+  .hero h1 { font-size: 42px; }
+  .hero-text { max-width: 100%; min-width: unset; }
+  .section-title { font-size: 32px; }
+  .feature-row { grid-template-columns: 1fr; gap: 32px; }
+  .feature-row.reverse .feature-image { order: 0; }
+  .feature-row.reverse .feature-text { order: 0; }
+  .how-grid { grid-template-columns: 1fr; }
+  .ba-grid { grid-template-columns: 1fr; max-width: 100%; }
+  .booking-wrapper { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .quiz-card { padding: 32px 24px; }
+  .cta-banner-content h2 { font-size: 32px; }
+  .footer-top { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="#" class="header-logo">
+      <img src="images/logo-w.png" alt="Eternal Wellness" class="logo-white">
+      <img src="images/logo-b.png" alt="Eternal Wellness" class="logo-black">
+    </a>
+    <nav class="header-nav">
+      <a href="#features">About Emface</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#quiz">Am I A Candidate?</a>
+      <a href="#results">Results</a>
+      <a href="#booking" class="btn btn-taupe" style="padding: 10px 24px; color: #2a2a2a; font-weight: 600;">Book Consultation</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Eternal Wellness Medical Spa</p>
+      <h1>Lift, Tone &amp; <em>Rejuvenate</em> Without Needles</h1>
+      <p class="hero-sub">Experience Emface — the revolutionary non-invasive facial treatment that combines HIFES and RF technology to naturally lift and sculpt your face in just 20 minutes.</p>
+      <a href="#booking" class="btn btn-taupe">Book Your Consultation</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FEATURES ═══ -->
+<section class="features" id="features">
+  <div class="container">
+    <div class="features-intro fade-in">
+      <p class="eyebrow">Discover Emface</p>
+      <h2 class="section-title">The Future of <em>Facial Rejuvenation</em></h2>
+      <p>Emface by BTL is the first and only device that simultaneously addresses facial skin and muscles — without needles, without downtime, and with clinically proven results.</p>
+    </div>
+
+    <!-- Row 1: Aesthetics -->
+    <div class="feature-row fade-in">
+      <div class="feature-image">
+        <img src="images/features1.jpg" alt="Emface device" class="tall">
+      </div>
+      <div class="feature-text">
+        <p class="eyebrow">Facial Aesthetics</p>
+        <h3>A Non-Invasive Alternative to Injectable Treatments</h3>
+        <p>Emface uses synchronized radiofrequency and HIFES technology to stimulate collagen production, increase elastin fibers, and restore facial muscle tone — delivering a natural-looking lift without a single needle. The 20-minute treatment targets forehead lines, brow lift, cheek contouring, and overall skin tightening for a refreshed, youthful appearance.</p>
+        <div class="feature-stats">
+          <div class="feature-stat">
+            <span class="number">37%</span>
+            <span class="label">Wrinkle Reduction</span>
+          </div>
+          <div class="feature-stat">
+            <span class="number">30%</span>
+            <span class="label">More Muscle Tone</span>
+          </div>
+          <div class="feature-stat">
+            <span class="number">23%</span>
+            <span class="label">Lifting Effect</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: Submentum -->
+    <div class="feature-row reverse fade-in">
+      <div class="feature-image">
+        <img src="images/features2.webp" alt="Emface submentum treatment">
+      </div>
+      <div class="feature-text">
+        <p class="eyebrow">Submentum Treatment</p>
+        <h3>Redefine Your Jawline &amp; Chin</h3>
+        <p>Emface Submentum is a specialized application designed to target the area under the chin and along the jawline. By using HIFES to strengthen the platysma and digastric muscles beneath the chin, combined with RF energy to tighten overlying skin, this treatment contours the lower face and reduces the appearance of a double chin — all without surgery or injectables.</p>
+      </div>
+    </div>
+
+    <!-- Row 3: TMJ -->
+    <div class="feature-row fade-in">
+      <div class="feature-image">
+        <img src="images/tmj.jpeg" alt="TMJ treatment with Emface">
+      </div>
+      <div class="feature-text">
+        <p class="eyebrow">Beyond Aesthetics</p>
+        <h3>Relief for TMJ &amp; Jaw Tension</h3>
+        <p>Emface is not only an aesthetic tool — it offers meaningful therapeutic benefits for patients suffering from TMJ (temporomandibular joint) disorder. The HIFES technology helps relax and rehabilitate overworked jaw muscles, reducing tension, pain, and clenching. Combined with radiofrequency, which promotes circulation and tissue healing, Emface provides a non-invasive, drug-free approach to TMJ management.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOW IT WORKS ═══ -->
+<section class="how-it-works" id="how-it-works">
+  <div class="container">
+    <div class="how-header fade-in">
+      <p class="eyebrow">The Science</p>
+      <h2 class="section-title">How Emface <em>Works</em></h2>
+    </div>
+    <div class="how-grid">
+      <div class="how-video fade-in">
+        <video controls preload="metadata" poster="images/banner3.jpg">
+          <source src="images/emface-video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="how-steps fade-in">
+        <div class="step">
+          <span class="step-number">01</span>
+          <div class="step-content">
+            <h4>HIFES Technology</h4>
+            <p>High-Intensity Focused Electrical Stimulation selectively activates facial muscles, increasing muscle density and tone — much like a targeted workout for your face.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-number">02</span>
+          <div class="step-content">
+            <h4>Radiofrequency Energy</h4>
+            <p>Synchronized RF energy heats the dermal layer, stimulating the production of collagen, elastin, and hyaluronic acid to restore skin firmness and smoothness.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-number">03</span>
+          <div class="step-content">
+            <h4>Combined Results</h4>
+            <p>By integrating both technologies simultaneously, Emface lifts facial muscles from beneath while rejuvenating the skin above — producing a smoother, more youthful appearance with no downtime.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA BANNER ═══ -->
+<section class="cta-banner">
+  <div class="cta-banner-bg"></div>
+  <div class="cta-banner-content fade-in">
+    <p class="eyebrow" style="color: var(--taupe-medium);">Limited Availability</p>
+    <h2>Ready to <em>Transform</em> Your Look?</h2>
+    <p>Schedule your personalized Emface consultation today and discover what needle-free rejuvenation can do for you.</p>
+    <a href="#booking" class="btn btn-white">Book Your Free Consultation</a>
+  </div>
+</section>
+
+<!-- ═══ IDEAL CANDIDATES (QUIZ) ═══ -->
+<section class="quiz-section" id="quiz">
+  <div class="container">
+    <div class="quiz-header fade-in">
+      <p class="eyebrow">Find Out</p>
+      <h2 class="section-title">Is Emface <em>Right for You?</em></h2>
+      <p>Answer a few quick questions to find out if you could be an ideal candidate for Emface treatment.</p>
+    </div>
+
+    <div class="quiz-card fade-in" id="quizCard">
+      <div class="quiz-progress" id="quizProgress">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+
+      <!-- Q1 -->
+      <div class="quiz-question active" data-q="0">
+        <h4>What is your primary concern?</h4>
+        <div class="quiz-options">
+          <button class="quiz-option" data-value="aesthetics">Facial sagging, wrinkles, or loss of skin firmness</button>
+          <button class="quiz-option" data-value="jawline">Double chin or undefined jawline</button>
+          <button class="quiz-option" data-value="tmj">TMJ pain, jaw clenching, or tension headaches</button>
+          <button class="quiz-option" data-value="combo">A combination of aesthetic and functional concerns</button>
+        </div>
+        <div class="quiz-nav"><span></span><button class="btn btn-taupe quiz-next" disabled>Next</button></div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="quiz-question" data-q="1">
+        <h4>Have you experienced jaw pain, clicking, or difficulty opening your mouth?</h4>
+        <div class="quiz-options">
+          <button class="quiz-option" data-value="yes-frequent">Yes, frequently — it affects my daily life</button>
+          <button class="quiz-option" data-value="yes-occasional">Occasionally, especially when stressed</button>
+          <button class="quiz-option" data-value="no">No, I don't have jaw-related issues</button>
+        </div>
+        <div class="quiz-nav"><button class="btn-back quiz-back">Back</button><button class="btn btn-taupe quiz-next" disabled>Next</button></div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="quiz-question" data-q="2">
+        <h4>How do you feel about needles and surgical procedures?</h4>
+        <div class="quiz-options">
+          <button class="quiz-option" data-value="avoid">I prefer to avoid needles and surgery entirely</button>
+          <button class="quiz-option" data-value="open">I'm open to injectables but want to explore alternatives</button>
+          <button class="quiz-option" data-value="complement">I currently get injectables and want a complementary treatment</button>
+        </div>
+        <div class="quiz-nav"><button class="btn-back quiz-back">Back</button><button class="btn btn-taupe quiz-next" disabled>Next</button></div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="quiz-question" data-q="3">
+        <h4>What best describes the results you're looking for?</h4>
+        <div class="quiz-options">
+          <button class="quiz-option" data-value="natural">A natural, subtle lift with no downtime</button>
+          <button class="quiz-option" data-value="contour">Defined jawline and chin contouring</button>
+          <button class="quiz-option" data-value="relief">Relief from jaw tension and TMJ discomfort</button>
+          <button class="quiz-option" data-value="all">All of the above</button>
+        </div>
+        <div class="quiz-nav"><button class="btn-back quiz-back">Back</button><button class="btn btn-brown quiz-next" disabled>See My Results</button></div>
+      </div>
+
+      <!-- Result -->
+      <div class="quiz-result" id="quizResult">
+        <div class="match-badge">Great Match</div>
+        <h4>Emface Could Be Perfect for You</h4>
+        <p id="quizResultText">Based on your answers, you appear to be an excellent candidate for Emface treatment. Our team at Eternal Wellness can create a personalized treatment plan to address your specific concerns.</p>
+        <a href="#booking" class="btn btn-brown">Book Your Consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BEFORE & AFTER ═══ -->
+<section class="before-after" id="results">
+  <div class="container">
+    <div class="ba-header fade-in">
+      <p class="eyebrow">Real Results</p>
+      <h2 class="section-title">Before &amp; <em>After</em></h2>
+    </div>
+    <div class="ba-grid fade-in">
+      <div class="ba-card"><img src="images/ba1.png" alt="Emface before and after result 1"></div>
+      <div class="ba-card"><img src="images/ba2.png" alt="Emface before and after result 2"></div>
+      <div class="ba-card"><img src="images/ba3.png" alt="Emface before and after result 3"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BOOKING FORM ═══ -->
+<section class="booking" id="booking">
+  <div class="container">
+    <div class="booking-wrapper">
+      <div class="booking-info fade-in">
+        <p class="eyebrow">Get Started</p>
+        <h2>Book Your <em>Consultation</em></h2>
+        <p>Take the first step toward a refreshed, more youthful you. Our expert team will assess your needs and design a customized Emface treatment plan — whether your goals are aesthetic, therapeutic, or both.</p>
+        <h4 style="font-family: var(--font-heading); font-size: 18px; color: var(--near-black); margin-bottom: 8px; margin-top: 8px;">Location</h4>
+        <div class="booking-detail">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>400 W Front St #200, Traverse City, Michigan</span>
+        </div>
+
+        <h4 style="font-family: var(--font-heading); font-size: 18px; color: var(--near-black); margin-bottom: 8px; margin-top: 20px;">Contact</h4>
+        <div class="booking-detail">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+12312524474" style="color: var(--brand-primary); text-decoration: none;">+1 231 252 4474</a>
+        </div>
+        <div class="booking-detail">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:info@eternalwellnessmedicalspa.com" style="color: var(--brand-primary); text-decoration: none;">info@eternalwellnessmedicalspa.com</a>
+        </div>
+
+        <h4 style="font-family: var(--font-heading); font-size: 18px; color: var(--near-black); margin-bottom: 8px; margin-top: 20px;">Hours</h4>
+        <div class="booking-detail">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span style="line-height: 1.8;">Monday: 8:30 AM – 5 PM<br>Tuesday: 8:30 AM – 5 PM<br>Wednesday: 8:30 AM – 5 PM<br>Thursday: 8:30 AM – 5 PM<br>Friday: 10 AM – 4 PM<br>Saturday: Closed<br>Sunday: Closed</span>
+        </div>
+
+      </div>
+
+      <form class="booking-form fade-in" onsubmit="handleFormSubmit(event)">
+        <h3>Request a Consultation</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="interest">Area of Interest</label>
+          <select id="interest" name="interest">
+            <option value="">Select an option</option>
+            <option value="facial-aesthetics">Facial Aesthetics (Lift &amp; Tighten)</option>
+            <option value="submentum">Submentum (Jawline &amp; Chin)</option>
+            <option value="tmj">TMJ / Jaw Pain Relief</option>
+            <option value="combination">Combination Treatment</option>
+            <option value="not-sure">Not Sure — I'd Like a Consultation</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message (Optional)</label>
+          <textarea id="message" name="message" placeholder="Tell us about your goals or any questions you have..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-brown">Submit Request</button>
+      </form>
+    </div>
+    <div style="margin-top: 60px; border-radius: 12px; overflow: hidden; box-shadow: rgba(0,0,0,0.1) 0px 2px 12px;">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2853.5!2d-85.6227!3d44.7631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x881e325e23264a1d%3A0x5c6c8a5b8e9e1c0a!2s400%20W%20Front%20St%20%23200%2C%20Traverse%20City%2C%20MI%2049684!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="faq-header fade-in">
+      <p class="eyebrow">Common Questions</p>
+      <h2 class="section-title">Frequently Asked <em>Questions</em></h2>
+    </div>
+    <div class="faq-list fade-in">
+      <div class="faq-item">
+        <button class="faq-toggle">
+          <h4>What does Emface treatment feel like?</h4>
+          <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="faq-answer"><p>Most patients describe the sensation as a warm, tingling feeling combined with gentle muscle contractions. The treatment is comfortable and requires no anesthesia — many patients relax or even nap during their 20-minute session.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-toggle">
+          <h4>How many sessions will I need?</h4>
+          <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="faq-answer"><p>A typical treatment protocol consists of 4 sessions spaced 5–10 days apart. Results become visible after the first treatment and continue to improve for several weeks following the final session. Maintenance treatments every 6–12 months help sustain results.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-toggle">
+          <h4>Is there any downtime after Emface?</h4>
+          <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="faq-answer"><p>There is zero downtime with Emface. You can return to your normal activities immediately after treatment. Some patients experience mild redness that typically subsides within an hour.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-toggle">
+          <h4>Can Emface really help with TMJ?</h4>
+          <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="faq-answer"><p>Yes. Emface's HIFES technology can target the muscles involved in TMJ disorder, helping to relax overworked jaw muscles and reduce tension. Many patients report significant improvement in jaw pain, headaches, and clenching after a series of treatments. It provides a non-invasive, drug-free complement to traditional TMJ therapies.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-toggle">
+          <h4>Who is not a candidate for Emface?</h4>
+          <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="faq-answer"><p>Emface is not recommended for individuals who are pregnant, have electronic implants (such as pacemakers or defibrillators), metal implants in the treatment area, or active skin conditions on the face. A consultation with our team will determine your eligibility.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-toggle">
+          <h4>How does Emface compare to Botox or fillers?</h4>
+          <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="faq-answer"><p>Unlike Botox (which temporarily paralyzes muscles) or fillers (which add volume), Emface works by strengthening your own facial muscles and stimulating your body's natural collagen production. It's a completely needle-free approach that complements or can serve as an alternative to injectables.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="images/logo-w.png" alt="Eternal Wellness Medical Spa">
+        <p>Premium medical aesthetics and wellness treatments in Traverse City, Michigan. Where science meets self-care.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Treatments</h5>
+        <ul>
+          <li><a href="#">Emface</a></li>
+          <li><a href="#">Neurotoxins</a></li>
+          <li><a href="#">Dermal Fillers</a></li>
+          <li><a href="#">Laser Treatments</a></li>
+          <li><a href="#">Skin Rejuvenation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Team</a></li>
+          <li><a href="#">Specials</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:+12312524474">+1 231 252 4474</a></li>
+          <li><a href="mailto:info@eternalwellnessmedicalspa.com">info@eternalwellnessmedicalspa.com</a></li>
+          <li><a href="#">400 W Front St #200<br>Traverse City, MI</a></li>
+          <li><a href="#">Mon–Thu: 8:30AM – 5PM<br>Fri: 10AM – 4PM</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Eternal Wellness Medical Spa. All rights reserved.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="#" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── Header scroll effect ──
+const header = document.getElementById('siteHeader');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// ── Scroll animations ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// ── FAQ accordion ──
+document.querySelectorAll('.faq-toggle').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+// ── Quiz ──
+let currentQ = 0;
+const answers = {};
+const questions = document.querySelectorAll('.quiz-question');
+const dots = document.querySelectorAll('.quiz-progress .dot');
+const result = document.getElementById('quizResult');
+const resultText = document.getElementById('quizResultText');
+
+document.querySelectorAll('.quiz-option').forEach(opt => {
+  opt.addEventListener('click', function() {
+    this.closest('.quiz-options').querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+    this.classList.add('selected');
+    answers[currentQ] = this.dataset.value;
+    this.closest('.quiz-question').querySelector('.quiz-next').disabled = false;
+  });
+});
+
+document.querySelectorAll('.quiz-next').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (currentQ < questions.length - 1) {
+      questions[currentQ].classList.remove('active');
+      dots[currentQ].classList.remove('active');
+      dots[currentQ].classList.add('completed');
+      currentQ++;
+      questions[currentQ].classList.add('active');
+      dots[currentQ].classList.add('active');
+    } else {
+      questions[currentQ].classList.remove('active');
+      dots[currentQ].classList.remove('active');
+      dots[currentQ].classList.add('completed');
+      showResult();
+    }
+  });
+});
+
+document.querySelectorAll('.quiz-back').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (currentQ > 0) {
+      questions[currentQ].classList.remove('active');
+      dots[currentQ].classList.remove('active');
+      dots[currentQ].classList.remove('completed');
+      currentQ--;
+      questions[currentQ].classList.add('active');
+      dots[currentQ].classList.add('active');
+      dots[currentQ].classList.remove('completed');
+    }
+  });
+});
+
+function showResult() {
+  document.querySelector('.quiz-progress').style.display = 'none';
+  const hasTMJ = answers[1] === 'yes-frequent' || answers[1] === 'yes-occasional';
+  const concern = answers[0];
+  let text = '';
+  if (concern === 'tmj' || hasTMJ) {
+    text = 'Based on your answers, Emface could be an excellent fit — both for its aesthetic benefits and its ability to address TMJ-related jaw tension and pain. Our team will create a comprehensive treatment plan tailored to your needs.';
+  } else if (concern === 'jawline') {
+    text = 'You sound like a great candidate for Emface Submentum, which targets the jawline and chin area for a more defined, contoured look — all without needles or downtime.';
+  } else {
+    text = 'Based on your answers, you appear to be an excellent candidate for Emface facial rejuvenation. Our team at Eternal Wellness will customize a treatment plan to help you achieve a natural, lifted look.';
+  }
+  resultText.textContent = text;
+  result.classList.add('active');
+}
+
+// ── Form ──
+function handleFormSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('button[type="submit"]');
+  btn.textContent = 'REQUEST SENT!';
+  btn.style.background = '#926D5C';
+  btn.disabled = true;
+  setTimeout(() => {
+    btn.textContent = 'SUBMIT REQUEST';
+    btn.style.background = '';
+    btn.disabled = false;
+    form.reset();
+  }, 3000);
+}
+
+// ── Smooth scroll for nav ──
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>

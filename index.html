@@ -318,7 +318,7 @@ a { text-decoration: none; color: inherit; }
   overflow: hidden;
 }
 .cta-banner-content {
-  padding-top: 50vh;
+  padding-top: 55vh;
 }
 .cta-banner-bg {
   position: absolute;
@@ -790,7 +790,7 @@ a { text-decoration: none; color: inherit; }
     <!-- Row 1: Aesthetics -->
     <div class="feature-row fade-in">
       <div class="feature-image">
-        <img src="images/features1.jpg" alt="Emface device" class="tall">
+        <img src="images/features6.jpg" alt="Emface device" class="tall">
       </div>
       <div class="feature-text">
         <p class="eyebrow">Facial Aesthetics</p>
@@ -798,15 +798,15 @@ a { text-decoration: none; color: inherit; }
         <p>Emface uses synchronized radiofrequency and HIFES technology to stimulate collagen production, increase elastin fibers, and restore facial muscle tone — delivering a natural-looking lift without a single needle. The 20-minute treatment targets forehead lines, brow lift, cheek contouring, and overall skin tightening for a refreshed, youthful appearance.</p>
         <div class="feature-stats">
           <div class="feature-stat">
-            <span class="number">37%</span>
+            <span class="number" data-target="37">0%</span>
             <span class="label">Wrinkle Reduction</span>
           </div>
           <div class="feature-stat">
-            <span class="number">30%</span>
+            <span class="number" data-target="30">0%</span>
             <span class="label">More Muscle Tone</span>
           </div>
           <div class="feature-stat">
-            <span class="number">23%</span>
+            <span class="number" data-target="23">0%</span>
             <span class="label">Lifting Effect</span>
           </div>
         </div>
@@ -816,7 +816,7 @@ a { text-decoration: none; color: inherit; }
     <!-- Row 2: Submentum -->
     <div class="feature-row reverse fade-in">
       <div class="feature-image">
-        <img src="images/features2.webp" alt="Emface submentum treatment">
+        <img src="images/features7.jpg" alt="Emface submentum treatment">
       </div>
       <div class="feature-text">
         <p class="eyebrow">Submentum Treatment</p>
@@ -1280,6 +1280,33 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     }
   });
 });
+
+
+// ── Count-up animation for stats ──
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const numbers = entry.target.querySelectorAll('.number[data-target]');
+      numbers.forEach(el => {
+        const target = parseInt(el.dataset.target);
+        const duration = 1600;
+        const start = performance.now();
+        function animate(now) {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = Math.round(eased * target);
+          el.textContent = current + '%';
+          if (progress < 1) requestAnimationFrame(animate);
+        }
+        requestAnimationFrame(animate);
+      });
+      statsObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+const statsSection = document.querySelector('.feature-stats');
+if (statsSection) statsObserver.observe(statsSection);
 </script>
 
 </body>

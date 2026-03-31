@@ -301,10 +301,9 @@ a { text-decoration: none; color: inherit; }
 }
 .how-header .eyebrow { color: var(--brand-primary); }
 .how-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 60px;
-  align-items: start;
 }
 .how-video {
   border-radius: 12px;
@@ -316,18 +315,23 @@ a { text-decoration: none; color: inherit; }
   display: block;
   border-radius: 12px;
 }
-.how-steps { display: flex; flex-direction: column; gap: 36px; }
+.how-steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+}
 .step {
   display: flex;
-  gap: 20px;
-  align-items: flex-start;
+  flex-direction: column;
+  gap: 12px;
+  text-align: center;
+  align-items: center;
 }
 .step-number {
   font-family: var(--font-heading);
   font-size: 48px;
   color: var(--taupe-medium);
   line-height: 1;
-  min-width: 50px;
 }
 .step-content h4 {
   font-family: var(--font-heading);

@@ -181,6 +181,43 @@ a { text-decoration: none; color: inherit; }
   margin-bottom: 36px;
 }
 .hero .btn { margin-top: 4px; }
+.hero-rating {
+  position: absolute;
+  bottom: 40px;
+  left: 24px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 24px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.hero-rating .hr-stars {
+  color: #F4B400;
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-family: var(--font-body);
+}
+.hero-rating .hr-score {
+  font-family: var(--font-body);
+  font-size: 17px;
+  color: var(--white);
+  font-weight: 500;
+}
+.hero-rating .hr-count {
+  font-family: var(--font-body);
+  font-size: 17px;
+  color: rgba(255,255,255,0.7);
+  font-weight: 400;
+}
+.hero-rating .hr-divider {
+  width: 1px;
+  height: 26px;
+  background: rgba(255,255,255,0.25);
+}
 
 /* ── FEATURES ── */
 .features {
@@ -472,6 +509,92 @@ a { text-decoration: none; color: inherit; }
   margin-bottom: 20px;
 }
 
+
+/* ── REVIEWS ── */
+.reviews {
+  padding: 100px 0;
+  background: var(--white);
+}
+.reviews-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.reviews-header .eyebrow { color: var(--brand-primary); }
+.reviews-header .rating-summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+.reviews-header .rating-summary .stars {
+  color: #F4B400;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+.reviews-header .rating-summary span {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--medium-gray);
+}
+.reviews-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.review-card {
+  background: var(--sand);
+  border-radius: 12px;
+  padding: 32px;
+  position: relative;
+}
+.review-card .review-stars {
+  color: #F4B400;
+  font-size: 16px;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+.review-card .review-text {
+  font-family: var(--font-secondary);
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--dark-gray);
+  font-style: italic;
+  margin-bottom: 18px;
+}
+.review-card .review-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.review-card .review-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.review-card .review-author {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  color: var(--near-black);
+}
+.review-card .review-source {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--medium-gray);
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+@media (max-width: 768px) {
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .review-card { padding: 24px; }
+}
 /* ── BEFORE & AFTER ── */
 .before-after {
   padding: 100px 0;
@@ -874,6 +997,9 @@ a { text-decoration: none; color: inherit; }
   .feature-row.reverse .feature-text { order: 0; }
   .how-grid { grid-template-columns: 1fr; }
   .ba-grid { grid-template-columns: 1fr; max-width: 100%; }
+  .how-steps { grid-template-columns: 1fr; gap: 28px; }
+  .step { text-align: left; align-items: flex-start; flex-direction: row; }
+  .step-number { min-width: 50px; }
   .booking-wrapper { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .quiz-card { padding: 32px 24px; }
@@ -912,6 +1038,12 @@ a { text-decoration: none; color: inherit; }
       <p class="hero-sub">Experience Emface — the revolutionary non-invasive facial treatment that combines HIFES and RF technology to naturally lift and sculpt your face in just 20 minutes.</p>
       <a href="#booking" class="btn btn-taupe">Book Your Consultation</a>
     </div>
+  </div>
+  <div class="hero-rating">
+    <span class="hr-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+    <span class="hr-score">5.0 on Google</span>
+    <span class="hr-divider"></span>
+    <span class="hr-count">201 Reviews</span>
   </div>
 </section>
 
@@ -1136,6 +1268,88 @@ a { text-decoration: none; color: inherit; }
   </div>
 </section>
 
+
+<!-- ═══ REVIEWS ═══ -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <div class="reviews-header fade-in">
+      <p class="eyebrow" style="font-size: 20px;">What Our Clients Say</p>
+      <h2 class="section-title">Reviews</h2>
+      <div class="rating-summary">
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span>5.0 from 200+ Google Reviews</span>
+      </div>
+    </div>
+    <div class="reviews-grid fade-in">
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"I just had my laser procedure done and it was an amazing experience. Kaleigh did a fantastic job, she made me feel comfortable. The office is also very welcoming, just a great experience! Highly recommended."</p>
+        <div class="review-footer">
+          <img class="review-avatar" src="https://lh3.googleusercontent.com/a-/ALV-UjXVXkwNFgAc7bD9N8zQCNxsLX23IETS4PmHLn6z-5ZI9ITRe6Br1w=w128-h128-p-rp-mo-br100" alt="Julie Molby">
+          <div>
+            <p class="review-author">Julie M.</p>
+            <p class="review-source">Google Review</p>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"I wish I could give way more than 5 stars. Brittany not only did a great job, but she made me feel so comfortable and confident. I will absolutely be coming back!"</p>
+        <div class="review-footer">
+          <img class="review-avatar" src="https://lh3.googleusercontent.com/a-/ALV-UjWrULii86_cGstJDJoaP_oIHka2VEVbDa-aTafKa26fbtdZvMaPNQ=w128-h128-p-rp-mo-br100" alt="Breahna Bell">
+          <div>
+            <p class="review-author">Breahna B.</p>
+            <p class="review-source">Google Review</p>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"I had a microneedling treatment with Kaleigh and it was such a great experience. She was kind, professional, and made me feel completely comfortable. She took the time to explain the process and answered all my questions."</p>
+        <div class="review-footer">
+          <img class="review-avatar" src="https://lh3.googleusercontent.com/a/ACg8ocLVKQn1RDm7tFLGF9UCrFkoRGdFkRExlN_TIM5VMFeKIOFq6Q=w128-h128-p-rp-mo-br100" alt="Niki Novak">
+          <div>
+            <p class="review-author">Niki N.</p>
+            <p class="review-source">Google Review</p>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"I was referred to check out the services at Eternal Wellness. I finally got the courage to come in for a consultation for skin care and scar treatment. The team was incredibly knowledgeable and put together a personalized plan for me."</p>
+        <div class="review-footer">
+          <img class="review-avatar" src="https://lh3.googleusercontent.com/a-/ALV-UjU4cyeH9AEsO5O_CVwVzQbgkEmp9G9KQcJmVtahmV3Mfh4GO2F0pw=w128-h128-p-rp-mo-ba2-br100" alt="Jen Schrader">
+          <div>
+            <p class="review-author">Jen S.</p>
+            <p class="review-source">Google Review</p>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"I had a wonderful experience with my SkinPen treatment. She was incredibly knowledgeable, kind, and took the time to explain everything, which made me feel completely comfortable throughout the process. The entire team was so welcoming."</p>
+        <div class="review-footer">
+          <img class="review-avatar" src="https://lh3.googleusercontent.com/a-/ALV-UjUqFVFqOvoM2O7Tq6xYAFaARREOsOm2AqkXu9e59wqX50_aRzmcxg=w128-h128-p-rp-mo-br100" alt="Bex Gerrard">
+          <div>
+            <p class="review-author">Bex G.</p>
+            <p class="review-source">Google Review</p>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"Always a great experience at Eternal Wellness. I got my first resurfacing done with Kayleigh and she made the entire experience wonderful. She was patient with my questions, made the best recommendations, and made it all so pleasant."</p>
+        <div class="review-footer">
+          <img class="review-avatar" src="https://lh3.googleusercontent.com/a/ACg8ocKLn75N1FG-jfLnJqNj42N89aVg5db8zfvGg_IsvjqVyxJB2A=w128-h128-p-rp-mo-br100" alt="Hayley Ball">
+          <div>
+            <p class="review-author">Hayley B.</p>
+            <p class="review-source">Google Review</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- ═══ BEFORE & AFTER ═══ -->
 <section class="before-after" id="results">
   <div class="container">

@@ -710,6 +710,143 @@ a { text-decoration: none; color: inherit; }
 }
 .footer-social a:hover { background: var(--brand-primary); color: var(--white); }
 
+/* ── KEY FEATURES BLOCK ── */
+.key-features {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 72px;
+  flex-wrap: wrap;
+}
+.key-feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+  width: 140px;
+}
+.key-feature .kf-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--sand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-primary);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.key-feature .kf-icon img {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+}
+.key-feature:hover .kf-icon {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 14px rgba(146,109,92,0.18);
+}
+.key-feature .kf-label {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--dark-gray);
+}
+.key-feature.central {
+  width: 160px;
+}
+.key-feature.central .kf-icon {
+  width: 100px;
+  height: 100px;
+  background: var(--brand-primary);
+  color: var(--white);
+  box-shadow: 0 6px 24px rgba(146,109,92,0.25);
+}
+.key-feature.central .kf-icon img {
+  width: 58px;
+  height: 58px;
+}
+.key-feature.central .kf-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--brand-primary);
+}
+@media (max-width: 768px) {
+  .key-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 48px;
+    justify-items: center;
+  }
+  .key-feature {
+    flex-direction: column;
+    width: auto;
+    min-width: unset;
+    max-width: unset;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+  }
+  .key-feature .kf-icon {
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+  }
+  .key-feature .kf-icon img {
+    width: 36px;
+    height: 36px;
+  }
+  .key-feature .kf-label { font-size: 11px; }
+  .key-feature.central {
+    grid-column: 1 / -1;
+    width: auto;
+    min-width: unset;
+    max-width: unset;
+    flex-direction: column;
+    text-align: center;
+  }
+  .key-feature.central .kf-icon { width: 80px; height: 80px; }
+  .key-feature.central .kf-label { font-size: 13px; }
+}
+
+/* ── MOBILE STICKY CTA ── */
+.mobile-sticky-cta {
+  display: none;
+}
+@media (max-width: 768px) {
+  .mobile-sticky-cta {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    padding: 12px 20px;
+    background: rgba(255,255,255,0.97);
+    box-shadow: 0 -2px 16px rgba(0,0,0,0.1);
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.35s ease;
+  }
+  .mobile-sticky-cta.visible {
+    transform: translateY(0);
+  }
+  .mobile-sticky-cta .btn {
+    width: 100%;
+    padding: 14px 24px;
+    font-size: 13px;
+  }
+  .hero .btn.mobile-hero-cta {
+    display: inline-block;
+  }
+}
+
 /* ── ANIMATIONS ── */
 .fade-in {
   opacity: 0;
@@ -771,7 +908,7 @@ a { text-decoration: none; color: inherit; }
   <div class="hero-content">
     <div class="hero-text">
       <p class="hero-eyebrow" style="font-size: 20px;">Eternal Wellness Medical Spa</p>
-      <h1>Lift, Tone &amp; <em>Rejuvenate</em> Without Needles</h1>
+      <h1>Emface is the New Natural <em>"Filler"</em></h1>
       <p class="hero-sub">Experience Emface — the revolutionary non-invasive facial treatment that combines HIFES and RF technology to naturally lift and sculpt your face in just 20 minutes.</p>
       <a href="#booking" class="btn btn-taupe">Book Your Consultation</a>
     </div>
@@ -784,7 +921,41 @@ a { text-decoration: none; color: inherit; }
     <div class="features-intro fade-in">
       <p class="eyebrow">Discover Emface</p>
       <h2 class="section-title">The Future of <em>Facial Rejuvenation</em></h2>
-      <p>Emface by BTL is the first and only device that simultaneously addresses facial skin and muscles — without needles, without downtime, and with clinically proven results.</p>
+      <p>Emface by BTL is the first and only hands-free device that simultaneously addresses facial skin and muscles — no needles, no fillers, no toxins, no injectables, no downtime. Just clinically proven results in 20 minutes.</p>
+    </div>
+
+    <!-- Key Features -->
+    <div class="key-features fade-in">
+      <div class="key-feature">
+        <div class="kf-icon">
+          <img src="images/needle-free.svg" alt="Needle-free">
+        </div>
+        <span class="kf-label">Needle-Free</span>
+      </div>
+      <div class="key-feature">
+        <div class="kf-icon">
+          <img src="images/hands-free.svg" alt="Hands-free">
+        </div>
+        <span class="kf-label">Hands-Free</span>
+      </div>
+      <div class="key-feature central">
+        <div class="kf-icon">
+          <img src="images/20-minutes.svg" alt="20 minutes">
+        </div>
+        <span class="kf-label">20 Minutes</span>
+      </div>
+      <div class="key-feature">
+        <div class="kf-icon">
+          <img src="images/filler-free.svg" alt="Filler-free">
+        </div>
+        <span class="kf-label">Filler-Free</span>
+      </div>
+      <div class="key-feature">
+        <div class="kf-icon">
+          <img src="images/toxin-free.svg" alt="Toxin-free">
+        </div>
+        <span class="kf-label">Toxin-Free</span>
+      </div>
     </div>
 
     <!-- Row 1: Aesthetics -->
@@ -1112,6 +1283,11 @@ a { text-decoration: none; color: inherit; }
   </div>
 </section>
 
+
+<!-- ═══ MOBILE STICKY CTA ═══ -->
+<div class="mobile-sticky-cta">
+  <a href="#booking" class="btn btn-brown">Book Your Consultation</a>
+</div>
 <!-- ═══ FOOTER ═══ -->
 <footer class="site-footer">
   <div class="container">
@@ -1270,6 +1446,16 @@ function handleFormSubmit(e) {
   }, 3000);
 }
 
+
+// ── Mobile sticky CTA ──
+const mobileCta = document.querySelector('.mobile-sticky-cta');
+const heroSection = document.querySelector('.hero');
+if (mobileCta && heroSection) {
+  window.addEventListener('scroll', () => {
+    const heroBottom = heroSection.getBoundingClientRect().bottom;
+    mobileCta.classList.toggle('visible', heroBottom < 0);
+  });
+}
 // ── Smooth scroll for nav ──
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', function(e) {

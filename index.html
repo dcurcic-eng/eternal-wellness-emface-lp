@@ -78,7 +78,12 @@ a { text-decoration: none; color: inherit; }
   cursor: pointer;
   transition: background 0.3s, transform 0.4s, box-shadow 0.3s;
 }
-.btn:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+.btn:hover { transform: translateY(-2px) scale(1.06); box-shadow: 0 4px 24px rgba(146,109,92,0.35), 0 0 18px rgba(146,109,92,0.2); }
+@keyframes btnGlow {
+  0%, 100% { box-shadow: 0 0 8px rgba(146,109,92,0.15); }
+  50% { box-shadow: 0 0 18px rgba(146,109,92,0.3), 0 0 30px rgba(146,109,92,0.12); }
+}
+.btn { animation: btnGlow 2.5s ease-in-out infinite; }
 .btn-taupe { background: var(--taupe-button); color: #000; }
 .btn-taupe:hover { background: var(--taupe-medium); }
 .btn-brown { background: var(--brand-primary); color: var(--white); }
@@ -258,8 +263,13 @@ a { text-decoration: none; color: inherit; }
   border-radius: 12px;
   box-shadow: rgba(0,0,0,0.15) 0px 0px 20px 0px;
   object-fit: cover;
+  transition: transform 0.5s ease;
 }
-.feature-image img.tall { max-height: 500px; }
+.feature-image img.tall { max-height: none; object-fit: contain; }
+.feature-image:hover img.tall,
+.feature-image:hover img[alt="Emface submentum treatment"] {
+  transform: scale(1.05);
+}
 .feature-text h3 {
   font-family: var(--font-heading);
   font-size: 28px;
@@ -789,7 +799,7 @@ a { text-decoration: none; color: inherit; }
 }
 .footer-top {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  grid-template-columns: 1.4fr 1fr;
   gap: 40px;
   margin-bottom: 48px;
 }
@@ -1103,14 +1113,14 @@ a { text-decoration: none; color: inherit; }
     </div>
 
     <!-- Row 1: Aesthetics -->
-    <div class="feature-row fade-in">
+    <div class="feature-row reverse fade-in">
       <div class="feature-image">
-        <img src="images/features8.jpg" alt="Emface device" class="tall">
+        <img src="images/emface-effect.png" alt="Emface facial volume effect" class="tall">
       </div>
       <div class="feature-text">
         <p class="eyebrow">Facial Aesthetics</p>
         <h3>A Non-Invasive Alternative to Injectable Treatments</h3>
-        <p>Emface uses synchronized radiofrequency and HIFES technology to stimulate collagen production, increase elastin fibers, and restore facial muscle tone — delivering a natural-looking lift without a single needle. The 20-minute treatment targets forehead lines, brow lift, cheek contouring, and overall skin tightening for a refreshed, youthful appearance.</p>
+        <p>Emface uses synchronized radiofrequency and HIFES technology to stimulate collagen production, increase elastin fibers, and restore facial muscle tone — delivering a natural-looking lift without a single needle. Clinical studies show Emface adds up to +3.3 ml of volume to the midface area while reducing up to −2.3 ml from the jowls, effectively redistributing facial volume for a sculpted, youthful contour. The 20-minute treatment targets forehead lines, brow lift, cheek contouring, and overall skin tightening for a refreshed appearance — no fillers required.</p>
         <div class="feature-stats">
           <div class="feature-stat">
             <span class="number" data-target="37">0%</span>
@@ -1129,7 +1139,7 @@ a { text-decoration: none; color: inherit; }
     </div>
 
     <!-- Row 2: Submentum -->
-    <div class="feature-row reverse fade-in">
+    <div class="feature-row fade-in">
       <div class="feature-image">
         <img src="images/features7.jpg" alt="Emface submentum treatment">
       </div>
@@ -1141,7 +1151,7 @@ a { text-decoration: none; color: inherit; }
     </div>
 
     <!-- Row 3: TMJ -->
-    <div class="feature-row fade-in">
+    <div class="feature-row reverse fade-in">
       <div class="feature-image">
         <video controls preload="metadata" poster="images/tmj.jpeg">
           <source src="images/TMJ_eternal wellness_web.mp4" type="video/mp4">
@@ -1524,26 +1534,6 @@ a { text-decoration: none; color: inherit; }
       <div class="footer-brand">
         <img src="images/logo-w.png" alt="Eternal Wellness Medical Spa">
         <p>Premium medical aesthetics and wellness treatments in Traverse City, Michigan. Where science meets self-care.</p>
-      </div>
-      <div class="footer-col">
-        <h5>Treatments</h5>
-        <ul>
-          <li><a href="#">Emface</a></li>
-          <li><a href="#">Neurotoxins</a></li>
-          <li><a href="#">Dermal Fillers</a></li>
-          <li><a href="#">Laser Treatments</a></li>
-          <li><a href="#">Skin Rejuvenation</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Quick Links</h5>
-        <ul>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Our Team</a></li>
-          <li><a href="#">Specials</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
       </div>
       <div class="footer-col">
         <h5>Contact</h5>

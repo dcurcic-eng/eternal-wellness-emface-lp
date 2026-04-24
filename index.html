@@ -228,14 +228,18 @@ h1 em, h2 em, h3 em, h4 em { font-style: normal; } /* no italic in headings */
 }
 .header-inner:hover { box-shadow: var(--shadow-lg); }
 
-.header-logo img {
-  height: 42px;
-  width: auto;
+.header-logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
   transition: transform var(--transition-fast);
 }
-.header-logo:hover img { transform: scale(1.02); }
-.logo-white { display: none; }
-.logo-black { display: block; }
+.header-logo img {
+  height: 22px;
+  width: auto;
+  display: block;
+}
+.header-logo:hover { transform: scale(1.02); }
 
 .header-nav { display: flex; align-items: center; gap: 4px; }
 .header-nav a {
@@ -533,7 +537,10 @@ h1 em, h2 em, h3 em, h4 em { font-style: normal; } /* no italic in headings */
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(31,12,4,0.6), rgba(31,12,4,0.4), rgba(31,12,4,0.6));
+  background:
+    linear-gradient(135deg, rgba(31,12,4,0.68), rgba(31,12,4,0.56), rgba(31,12,4,0.68)),
+    linear-gradient(rgba(0,0,0,0.24), rgba(0,0,0,0.24));
+  background-blend-mode: multiply;
 }
 .cta-banner-content {
   position: relative;
@@ -1256,7 +1263,7 @@ h1 em, h2 em, h3 em, h4 em { font-style: normal; } /* no italic in headings */
 @media (max-width: 768px) {
   .site-header { top: 8px; padding: 0 8px; }
   .header-inner { height: 56px; padding: 0 8px 0 14px; }
-  .header-logo img { height: 36px; }
+  .header-logo img { height: 18px; }
   .header-nav { display: none; }
   .header-nav .btn { display: inline-block; }
   .header-inner .mobile-book { display: inline-block; padding: 10px 16px; font-size: 11px; border-width: 3px; }
@@ -1313,9 +1320,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ═══ HEADER ═══ -->
 <header class="site-header" id="siteHeader">
   <div class="header-inner">
-    <a href="#" class="header-logo" aria-label="Eternal Wellness Home">
-      <img src="images/logo-w.png" alt="Eternal Wellness" class="logo-white">
-      <img src="images/logo-b.png" alt="Eternal Wellness" class="logo-black">
+    <a href="#" class="header-logo" aria-label="Eternal Wellness Medical Spa Home">
+      <img src="images/eternal_logo.svg" alt="Eternal Wellness Medical Spa">
     </a>
     <nav class="header-nav" aria-label="Primary">
       <a href="#features">About Emface</a>

@@ -438,7 +438,6 @@ h1 em, h2 em, h3 em, h4 em { font-style: normal; } /* no italic in headings */
   padding-top: 32px;
   border-top: 1px solid var(--color-border-default);
 }
-.feature-stat { }
 .feature-stat .number {
   display: block;
   font-family: var(--font-heading);
@@ -1704,16 +1703,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
 
-      <form class="booking-form fade-right" onsubmit="handleFormSubmit(event)">
-        <h3>Request a consultation</h3>
+      <form class="booking-form staff-benefit-form fade-right">
+        <h3>Request a Consultation</h3>
         <div class="form-row">
           <div class="form-group">
-            <label for="firstName">First Name</label>
-            <input type="text" id="firstName" name="firstName" required>
+            <label for="first_name">First Name</label>
+            <input type="text" id="first_name" name="first_name" required>
           </div>
           <div class="form-group">
-            <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" name="lastName" required>
+            <label for="last_name">Last Name</label>
+            <input type="text" id="last_name" name="last_name" required>
           </div>
         </div>
         <div class="form-row">
@@ -1727,21 +1726,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
         <div class="form-group">
-          <label for="interest">Area of Interest</label>
-          <select id="interest" name="interest">
-            <option value="">Select an option</option>
-            <option value="facial-lift">Facial Lifting &amp; Tightening</option>
-            <option value="wrinkle-reduction">Wrinkle Reduction</option>
-            <option value="skin-rejuvenation">Skin Rejuvenation &amp; Texture</option>
-            <option value="full-face">Full Face Rejuvenation</option>
-            <option value="not-sure">Not Sure? I'd Like a Consultation</option>
-          </select>
-        </div>
-        <div class="form-group">
           <label for="message">Message (Optional)</label>
           <textarea id="message" name="message" placeholder="Tell us about your goals or any questions you have..."></textarea>
         </div>
-        <button type="submit" class="btn">Submit Request</button>
+        <div class="form-group" style="margin-bottom: 8px;">
+          <div style="display: flex; align-items: flex-start; gap: 10px;">
+            <input type="checkbox" id="newsletter" name="newsletter" required style="margin-top: 4px; width: auto; accent-color: var(--color-brand-primary);">
+            <label for="newsletter" style="text-transform: none; letter-spacing: 0; font-size: 12px; font-style: italic; line-height: 1.5; color: var(--color-text-secondary);">
+              By submitting this form, you agree to receive marketing text messages,
+              alerts, and notifications from Eternal Wellness.
+              Message frequency may vary. Rates may be applied.
+              You can opt out at any time by replying STOP.
+            </label>
+          </div>
+        </div>
+        <div id="form-error" role="alert" aria-live="polite" style="display: none; color: #c0392b; font-size: 13px; margin-bottom: 12px; font-family: var(--font-body);"></div>
+        <button type="submit" class="btn submit-btn">Submit Request</button>
       </form>
     </div>
     <div class="booking-map fade-in">
@@ -1933,19 +1933,108 @@ function showResult() {
 }
 
 // ── Form ──
-function handleFormSubmit(e) {
-  e.preventDefault();
-  const form = e.target;
-  const btn = form.querySelector('button[type="submit"]');
-  const original = btn.textContent;
-  btn.textContent = 'Request Sent';
-  btn.disabled = true;
-  setTimeout(() => {
-    btn.textContent = original;
-    btn.disabled = false;
-    form.reset();
-  }, 3000);
-}
+(function () {
+  const forms = document.querySelectorAll('.staff-benefit-form');
+
+  forms.forEach((form) => {
+    const submitBtn = form.querySelector('.submit-btn');
+    const errEl = form.querySelector('#form-error');
+
+    function showError(msg) {
+      if (!errEl) return;
+      errEl.textContent = msg;
+      errEl.style.display = msg ? 'block' : 'none';
+    }
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      showError('');
+      submitBtn.disabled = true;
+
+      const email = form.querySelector('#email').value?.trim() || '';
+      const phone = form.querySelector('#phone').value?.trim() || '';
+      const first_name = form.querySelector('#first_name').value?.trim() || '';
+      const last_name = form.querySelector('#last_name').value?.trim() || '';
+      const message = form.querySelector('#message')?.value?.trim() || '';
+      const checkbox = form.querySelector('#newsletter')?.checked ? 'on' : '';
+
+      const emailRe = /^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/;
+      if (!emailRe.test(email)) {
+        showError('Please enter a valid email address.');
+        submitBtn.disabled = false;
+        return;
+      }
+
+      const phoneRe = /^[0-9]{10}$/;
+      if (!phoneRe.test(phone)) {
+        showError('Please enter a 10-digit US phone number.');
+        submitBtn.disabled = false;
+        return;
+      }
+
+      const fd = new FormData();
+      fd.append('first_name', first_name);
+      fd.append('last_name', last_name);
+      fd.append('phone', `+1${phone}`);
+      fd.append('email', email);
+      fd.append('checkbox', checkbox);
+      fd.append('organization', 'c543dd90-48c9-422e-a949-67d2b791eba7');
+      fd.append('form', '468');
+      fd.append('message', message);
+      fd.append('form_location', window.location.href);
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const trackingMap = {
+        gclid: 'google',
+        wbraid: 'google',
+        gbraid: 'google',
+        fbclid: 'meta',
+        ttclid: 'tiktok',
+      };
+      let trackingParam = '';
+      let adSource = 'other';
+      for (const [param, source] of Object.entries(trackingMap)) {
+        const val = urlParams.get(param);
+        if (val) {
+          trackingParam = val;
+          adSource = source;
+          break;
+        }
+      }
+      fd.append('tracking_param', trackingParam);
+      fd.append('ad_source', adSource);
+
+      try {
+        const res = await fetch(
+          'https://api.aevadigital.com/api/v1/contacts/add_contact_from_form/',
+          {
+            method: 'POST',
+            body: fd,
+          }
+        );
+
+        if (!res.ok) {
+          const txt = await res.text().catch(() => res.statusText);
+          throw new Error(txt || 'Server error');
+        }
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ 'event': 'form-success' });
+
+        form.style.display = 'none';
+        const thankYou = document.createElement('div');
+        thankYou.className = 'form-success-message';
+        thankYou.style.cssText = 'text-align:center; padding:40px; font-family:var(--font-body);';
+        thankYou.innerHTML = '<h3 style="font-family:var(--font-heading); font-size:24px; color:var(--color-text-primary); margin-bottom:12px;">Thank You!</h3><p style="color:var(--color-text-secondary); font-size:14px;">Your consultation request has been received. We\'ll be in touch shortly.</p>';
+        form.parentNode.insertBefore(thankYou, form.nextSibling);
+      } catch (err) {
+        console.error(err);
+        showError('Submission failed — please try again.');
+        submitBtn.disabled = false;
+      }
+    });
+  });
+})();
 
 // ── Mobile sticky CTA ──
 const mobileCta = document.querySelector('.mobile-sticky-cta');
